@@ -1,0 +1,276 @@
+{
+	"id": "00ea19e3-3e85-4916-89c0-e1d5168c3352",
+	"createdAt": "2023-03-23T04:34:44.000Z",
+	"createdBy": "ole-andre.haugen@neptune-software.com",
+	"settings": {
+		"properties": {
+			"report": {
+				"showIcon": false,
+				"actionButtonLeft": false,
+				"iconButtonClose": "",
+				"textButtonClose": "Close",
+				"typeButtonClose": "Transparent",
+				"iconButtonCreate": "",
+				"textButtonCreate": "Add",
+				"typeButtonCreate": "Emphasized",
+				"iconButtonExport": "sap-icon://excel-attachment",
+				"textButtonExport": "",
+				"typeButtonExport": "Transparent",
+				"iconButtonImport": "sap-icon://fa-solid/file-import",
+				"textButtonImport": "",
+				"typeButtonImport": "Transparent",
+				"iconButtonMultiSelect": "",
+				"textButtonMultiSelect": "MultiSelect",
+				"typeButtonMultiSelect": "Emphasized",
+				"iconButtonRun": "",
+				"textButtonRun": "Update",
+				"typeButtonRun": "Emphasized",
+				"enableRun": false,
+				"enableCreate": true,
+				"enableClose": false,
+				"enableDelete": false,
+				"enableExport": false,
+				"enableImport": false,
+				"enableMultiSelect": false,
+				"enableVariant": false,
+				"autoRun": true,
+				"autoRunFocus": true,
+				"searchLabel": "Search",
+				"searchPlaceholder": "",
+				"title": "Connection String",
+				"_navigationItemPress": {
+					"destinationType": "F",
+					"openAs": "P",
+					"butType": "Accept",
+					"destinationTargetF": "8301a1c4-64f7-4557-9078-f24369158c5d",
+					"keyField": [],
+					"dialogHeight": "860px"
+				},
+				"_navigationCreate": {
+					"destinationType": "F",
+					"openAs": "P",
+					"butType": "Accept",
+					"destinationTargetF": "8301a1c4-64f7-4557-9078-f24369158c5d",
+					"keyField": [
+						{
+							"fieldName": "dbid",
+							"key": "dbid",
+							"value": ""
+						}
+					],
+					"dialogHeight": "840px"
+				},
+				"hideHeader": false
+			},
+			"form": {
+				"enableCompact": false,
+				"headerExpanded": true,
+				"headerPreserveState": false
+			},
+			"table": {
+				"enablePagination": false,
+				"paginationShowSelection": false,
+				"paginationRows": 25,
+				"showSeparators": "All",
+				"alternateRowColors": false,
+				"fixedLayout": true,
+				"inset": false,
+				"enableCompact": false,
+				"enableAction1": false,
+				"enableAction2": false,
+				"enableAction3": false,
+				"enableAction4": false,
+				"enableAction5": false,
+				"action1Text": "",
+				"action1Type": "Transparent",
+				"action2Text": "",
+				"action2Type": "Transparent",
+				"action3Text": "",
+				"action3Type": "Transparent",
+				"action4Text": "",
+				"action4Type": "Transparent",
+				"action5Text": "",
+				"action5Type": "Transparent",
+				"enableAutoPopin": false
+			}
+		},
+		"fieldCatalog": [
+			{
+				"name": "dbid",
+				"label": "Connection ID",
+				"type": "smalltext",
+				"usage": "BOTH"
+			},
+			{
+				"name": "role",
+				"label": "Role",
+				"type": "smalltext",
+				"usage": "BOTH"
+			},
+			{
+				"name": "host",
+				"label": "Host",
+				"type": "smalltext",
+				"usage": "BOTH"
+			},
+			{
+				"name": "port",
+				"label": "Port",
+				"type": "integer",
+				"usage": "BOTH"
+			},
+			{
+				"name": "username",
+				"label": "Username",
+				"type": "smalltext",
+				"usage": "BOTH"
+			},
+			{
+				"name": "password",
+				"label": "Password",
+				"type": "smalltext",
+				"usage": "BOTH"
+			},
+			{
+				"name": "database",
+				"label": "Database Name",
+				"type": "smalltext",
+				"usage": "BOTH"
+			},
+			{
+				"name": "connectionstring",
+				"label": "Connection String",
+				"type": "mediumtext",
+				"usage": "BOTH"
+			},
+			{
+				"name": "updatedAt",
+				"label": "Updated At",
+				"type": "timestamp",
+				"usage": "BOTH"
+			},
+			{
+				"name": "createdAt",
+				"label": "Created At",
+				"type": "timestamp",
+				"usage": "BOTH"
+			},
+			{
+				"name": "updatedBy",
+				"label": "Updated By",
+				"type": "text",
+				"usage": "BOTH"
+			},
+			{
+				"name": "createdBy",
+				"label": "Created By",
+				"type": "text",
+				"usage": "BOTH"
+			}
+		],
+		"fieldsSel": [
+			{
+				"visible": false,
+				"name": "dbid",
+				"text": "Connection ID",
+				"fieldPos": 1,
+				"required": true
+			}
+		],
+		"fieldsRun": [
+			{
+				"buttonType": "Transparent",
+				"popinDisplay": "Block",
+				"enableFilter": false,
+				"enableSort": true,
+				"visible": false,
+				"name": "dbid",
+				"text": "Connection ID",
+				"fieldPos": 2,
+				"valueType": ""
+			},
+			{
+				"buttonType": "Transparent",
+				"popinDisplay": "Block",
+				"enableFilter": false,
+				"enableSort": true,
+				"visible": true,
+				"name": "role",
+				"text": "Role",
+				"fieldPos": 3,
+				"valueType": "Lookup",
+				"valueLookup": {
+					"table": "neptune_af_connector_role",
+					"textField": "Name",
+					"keyField": [
+						{
+							"fieldName": "role",
+							"key": "role",
+							"value": ""
+						}
+					],
+					"hideKey": true,
+					"butType": "Accept"
+				}
+			},
+			{
+				"buttonType": "Transparent",
+				"popinDisplay": "Inline",
+				"enableFilter": true,
+				"enableSort": true,
+				"visible": true,
+				"name": "database",
+				"text": "Database Name",
+				"fieldPos": 4
+			},
+			{
+				"buttonType": "Transparent",
+				"popinDisplay": "Block",
+				"enableFilter": false,
+				"enableSort": true,
+				"visible": true,
+				"name": "updatedAt",
+				"text": "Updated At",
+				"fieldPos": 5,
+				"formatter": "date00"
+			},
+			{
+				"buttonType": "Transparent",
+				"popinDisplay": "Block",
+				"enableFilter": false,
+				"enableSort": true,
+				"visible": true,
+				"name": "updatedBy",
+				"text": "Updated By",
+				"fieldPos": 6
+			}
+		],
+		"defaultVariant": {
+			"id": "6a9758d4-1041-4581-fc72-b33561969d8c",
+			"colOrder": "key_a_to_z",
+			"rowOrder": "key_a_to_z",
+			"row": [],
+			"column": [],
+			"val": [],
+			"inclusions": {},
+			"exclusions": {}
+		}
+	},
+	"name": "neptune_af_connector_dburi_list",
+	"description": "",
+	"group": "",
+	"type": "C",
+	"connectorid": "5136c2d8-8620-48ba-adfc-a270ca0c19c7",
+	"scriptSel": null,
+	"scriptRun": null,
+	"tableid": null,
+	"ver": "23.8.19.928",
+	"disabled": false,
+	"appType": "A",
+	"application": "planet9_adaptive_list",
+	"package": "30a546bc-adb8-4c8d-b0f8-151b2a714967",
+	"roles": [],
+	"scriptSelObj": null,
+	"scriptRunObj": null,
+	"tableObj": null
+}

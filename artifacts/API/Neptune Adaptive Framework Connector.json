@@ -1,0 +1,549 @@
+{
+	"id": "786a81ca-5973-45fa-b311-c348916d230a",
+	"createdAt": "2023-02-06T14:45:12.000Z",
+	"createdBy": "ole-andre.haugen@neptune-software.com",
+	"auth": [],
+	"endpoints": [],
+	"paths": [
+		{
+			"id": "8fd7f4e6-a387-4bb4-e8aa-d413db07e85b",
+			"method": "GET",
+			"path": "/list",
+			"description": "",
+			"parameters": [
+				{
+					"name": "type",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				}
+			],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"tags": "Client",
+			"serverScript": "b8353950-399a-493f-8952-4f176a7386a5"
+		},
+		{
+			"id": "26dee9bc-6cbb-48f4-be3a-309553e55e5a",
+			"method": "POST",
+			"path": "/save",
+			"description": "",
+			"parameters": [],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "f0138351-ad95-486b-97a7-21b0fcc30240",
+			"tags": "Client"
+		},
+		{
+			"id": "613ea06a-51b5-4e9d-d716-b838a5b6494f",
+			"method": "DELETE",
+			"path": "/delete",
+			"description": "",
+			"parameters": [],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "08579743-0006-48bb-85d6-8f1de21fe0ba",
+			"tags": "Client"
+		},
+		{
+			"id": "71e680a9-3ac7-44dc-c3c7-7a207aa6f945",
+			"method": "GET",
+			"path": "/get",
+			"description": "",
+			"parameters": [],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "715f3ab8-daa6-45ae-a648-80a4ada0d180",
+			"tags": "Client"
+		},
+		{
+			"id": "989fd149-588a-46a0-c117-6809cb351840",
+			"method": "GET",
+			"path": "/odataservices",
+			"description": "",
+			"parameters": [
+				{
+					"name": "systemid",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				}
+			],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "bfcb3616-29fc-403a-9594-a6c98d57c3e3",
+			"tags": "OData"
+		},
+		{
+			"id": "d8b5dfd7-04b5-47c0-8a2f-73c35d497615",
+			"method": "GET",
+			"path": "/odataentitysets",
+			"description": "",
+			"parameters": [
+				{
+					"name": "systemid",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				},
+				{
+					"name": "service",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				}
+			],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "b3a8b56b-9a2c-48c8-a198-f5d269841ef6",
+			"tags": "OData"
+		},
+		{
+			"id": "709b9955-e7be-4040-d1c7-9ce29ad6cd2d",
+			"method": "GET",
+			"path": "/odataentitysetfields",
+			"description": "",
+			"parameters": [
+				{
+					"name": "systemid",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				},
+				{
+					"name": "service",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				},
+				{
+					"name": "entitySet",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				}
+			],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"tags": "OData",
+			"serverScript": "b786f6ca-84f3-4ef1-b6c2-870b01246d8e"
+		},
+		{
+			"id": "ad1a7eca-793f-433b-8cef-cb83b4491236",
+			"method": "GET",
+			"path": "/salesforce-sobjects",
+			"description": "",
+			"parameters": [
+				{
+					"name": "systemid",
+					"description": "",
+					"required": false,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				}
+			],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"tags": "Salesforce",
+			"serverScript": "0e07b97e-8836-4ac0-86af-4bd3fa0907a0"
+		},
+		{
+			"id": "f9935004-7b23-407c-d379-ddec02d50025",
+			"method": "GET",
+			"path": "/salesforce-sobject",
+			"description": "",
+			"parameters": [
+				{
+					"name": "table",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				},
+				{
+					"name": "systemid",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				}
+			],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "ae1623e0-4640-454f-a058-ce7f361e52ec",
+			"tags": "Salesforce"
+		},
+		{
+			"id": "35c76df8-87d0-4c84-f83f-c95b9ad93bec",
+			"method": "GET",
+			"path": "/servicenow-tables",
+			"description": "",
+			"parameters": [
+				{
+					"name": "systemid",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				}
+			],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"tags": "ServiceNow",
+			"serverScript": "7b559283-4b5b-4742-b646-e27474b6b9c7"
+		},
+		{
+			"id": "1903ed46-5af3-429f-9439-609e8c0a30b0",
+			"method": "GET",
+			"path": "/servicenow-table",
+			"description": "",
+			"parameters": [
+				{
+					"name": "systemid",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				}
+			],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "b9ac8010-b74d-49a8-a1aa-cf0487d5d176",
+			"tags": "ServiceNow"
+		},
+		{
+			"id": "457be21c-f49c-40bf-c734-72f2dec4f6b4",
+			"method": "GET",
+			"path": "/planet9-entitites",
+			"description": "",
+			"parameters": [],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"tags": "Open Edition",
+			"serverScript": "ab17f37f-ffae-464e-8c7a-9148ee9f3d16"
+		},
+		{
+			"id": "55995560-2b11-4ab0-c682-62fcca78be38",
+			"method": "GET",
+			"path": "/planet9-entity",
+			"description": "",
+			"parameters": [],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "f87d1fe0-a811-41d1-8511-aaa6cb66f0fd",
+			"tags": "Open Edition"
+		},
+		{
+			"id": "36918947-d606-44dd-a27a-b42d0f12aedc",
+			"method": "GET",
+			"path": "/servicenow-items",
+			"description": "",
+			"parameters": [
+				{
+					"name": "systemid",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				},
+				{
+					"name": "displayfield",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				}
+			],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"tags": "ServiceNow",
+			"serverScript": "a75c7347-a8ad-4d56-824e-51ce4e2b4d3f"
+		},
+		{
+			"id": "a894873b-529c-4990-e8e6-e17d61632c31",
+			"method": "GET",
+			"path": "/hana-schema",
+			"description": "",
+			"parameters": [
+				{
+					"name": "dbid",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				}
+			],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "fd2bb3d2-91fd-4e2d-8656-07e0b442d313",
+			"tags": "HANA"
+		},
+		{
+			"id": "d0f8e117-3516-4ba6-e8a9-5581a226e34f",
+			"method": "GET",
+			"path": "/hana-tables",
+			"description": "",
+			"parameters": [
+				{
+					"name": "dbid",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				},
+				{
+					"name": "schema",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				}
+			],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "507e64ae-a28f-47fb-a6d8-2bccca4d8613",
+			"tags": "HANA"
+		},
+		{
+			"id": "0baf1979-b67f-459b-ca26-1d368b54d322",
+			"method": "GET",
+			"path": "/hana-fields",
+			"description": "",
+			"parameters": [
+				{
+					"name": "dbid",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				},
+				{
+					"name": "schema",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				},
+				{
+					"name": "table",
+					"description": "",
+					"required": true,
+					"inPath": false,
+					"value": "",
+					"default": "",
+					"example": ""
+				}
+			],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "2164f706-11f3-4a56-b50a-10ac4167f4ae",
+			"tags": "HANA"
+		},
+		{
+			"id": "0636c36e-5444-4027-f730-db4c21742fbf",
+			"method": "GET",
+			"path": "/mssql-schema",
+			"description": "",
+			"parameters": [],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "910cde3b-8798-49d9-b0fc-18030b86f5a3",
+			"tags": "MSSQL"
+		},
+		{
+			"id": "fb209c09-83c7-4ed9-a44a-5243b03da0b9",
+			"method": "GET",
+			"path": "/mssql-tables",
+			"description": "",
+			"parameters": [],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "2b32bb3f-1672-4c55-8581-f433af2de1a2",
+			"tags": "MSSQL"
+		},
+		{
+			"id": "c7076638-a4c1-43b7-959e-b22ffe1d9c70",
+			"method": "GET",
+			"path": "/mssql-fields",
+			"description": "",
+			"parameters": [],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "864bb8b9-208f-404b-9403-6a06dda9b03c",
+			"tags": "MSSQL"
+		},
+		{
+			"id": "5ccc92ae-cd7d-49bc-ff9a-7d15932096c3",
+			"method": "POST",
+			"path": "/mssql-query",
+			"description": "",
+			"parameters": [],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "101c5ddb-17c2-428e-84a4-35c421c0512d",
+			"tags": "MSSQL"
+		},
+		{
+			"id": "2b8f8518-dedf-472e-9555-5a485343d99d",
+			"method": "GET",
+			"path": "/mssql-count",
+			"description": "",
+			"parameters": [],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "00089936-a679-409b-b608-5020e82b6840",
+			"tags": "MSSQL"
+		},
+		{
+			"id": "5f4de191-2127-45a9-b1e1-94eeffcf22b3",
+			"method": "GET",
+			"path": "/mssql-export",
+			"description": "",
+			"parameters": [],
+			"headers": [],
+			"responses": [],
+			"content": [],
+			"auth": [],
+			"endpoints": [],
+			"serverScript": "06fa3902-6509-4e4a-aea5-df65fb8532b2",
+			"tags": "MSSQL"
+		}
+	],
+	"definitions": [],
+	"documentation": [],
+	"name": "Neptune Adaptive Framework Connector",
+	"endpoint": "/api/serverscript/neptuneadaptiveframeworkconnector",
+	"ver": "24.06.28.0654",
+	"version": "1.0",
+	"description": "Neptune Adaptive Framework Connector",
+	"mediaType": null,
+	"securitySchemes": null,
+	"swaggerURI": null,
+	"swaggerSystem": null,
+	"apiType": "script",
+	"about": null,
+	"enableProxy": false,
+	"forwardProxy": null,
+	"restrictAccess": false,
+	"enableTrace": false,
+	"enableIDE": true,
+	"internalAPI": false,
+	"isPublic": false,
+	"tlsAllowUntrusted": false,
+	"useOwnProcess": false,
+	"package": "30a546bc-adb8-4c8d-b0f8-151b2a714967",
+	"apiGroup": "5c76d2dc-2881-41d5-8db1-cd2bb3cd8d4f",
+	"apiFormat": 0,
+	"roles": []
+}

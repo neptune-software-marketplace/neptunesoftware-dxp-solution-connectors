@@ -1,0 +1,33 @@
+const context = this.getContextByIndex(this.getSelectedIndex());
+
+if (context) {
+    const data = context.getObject();
+
+    if (controller.tableOpenBy === "Setup") {
+        modeloPageDetail.oData.config.table = data.name;
+        modeloPageDetail.oData.config.creatable = true;
+        modeloPageDetail.oData.config.updatable = true;
+        modeloPageDetail.oData.config.deletable = true;
+
+        if (data.IS_VIEW) {
+            modeloPageDetail.oData.config.isview = true;
+        } else {
+            modeloPageDetail.oData.config.isview = false;
+        }
+
+        controller.updateFields();
+    }
+
+    if (controller.tableOpenBy === "Fields") {
+        controller.tableOpenData.joinTable = data.name;
+
+        if (data.IS_VIEW) {
+            controller.tableOpenData.joinIsView = true;
+        } else {
+            controller.tableOpenData.joinIsView = false;
+        }
+    }
+
+    modeloPageDetail.refresh();
+    diaTables.close();
+}

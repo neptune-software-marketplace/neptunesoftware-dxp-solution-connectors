@@ -1,0 +1,34 @@
+{
+	"id": "f87d1fe0-a811-41d1-8511-aaa6cb66f0fd",
+	"createdAt": "2023-02-26T08:37:45.000Z",
+	"createdBy": "ole-andre.haugen@neptune-software.com",
+	"globalScripts": [
+		{
+			"id": "6ec72fc2-c411-401d-bd1c-b41dfbaf9156",
+			"name": "NeptuneConnectors - Utils",
+			"contextname": "Utils"
+		}
+	],
+	"externalModules": [
+		{
+			"id": "c1e44158-f85b-48c3-85df-cd3bb1f6c7f4",
+			"name": "typeorm",
+			"contextname": "typeorm",
+			"path": "typeorm"
+		}
+	],
+	"entitySets": [],
+	"apis": [],
+	"name": "Planet9Entity",
+	"ver": "23.2.26.1451",
+	"description": null,
+	"folder": null,
+	"content": "file:///content.js",
+	"useAsGlobalScript": false,
+	"transpiledContent": null,
+	"lastRunSuccessful": false,
+	"isTypescript": false,
+	"language": "javascript",
+	"jsscriptGroup": "8407e587-50c3-4d42-bb2e-35abf1281c47",
+	"package": "30a546bc-adb8-4c8d-b0f8-151b2a714967"
+}

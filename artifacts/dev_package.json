@@ -1,0 +1,457 @@
+{
+	"id": "30a546bc-adb8-4c8d-b0f8-151b2a714967",
+	"createdAt": "2023-02-06T14:32:01.000Z",
+	"createdBy": "ole-andre.haugen@neptune-software.com",
+	"git": {
+		"remote": "https://github.com/neptune-software-marketplace/neptunesoftware-dxp-solution-connectors.git"
+	},
+	"name": "neptunesoftware-extended-connectors",
+	"description": "Adaptive Framework Connector",
+	"ver": "25.06.12.2156",
+	"enableCICD": true,
+	"apps": [
+		{
+			"id": "edb95cc5-7ce8-461b-bd02-ba55ff2da83e",
+			"application": "neptune_connector_mssql",
+			"title": "MS SQL Server",
+			"description": "MS SQL Server",
+			"package": {
+				"id": "30a546bc-adb8-4c8d-b0f8-151b2a714967"
+			}
+		},
+		{
+			"id": "ec2e7582-d646-467c-b08c-73d361f05133",
+			"application": "neptune_connector_pagination",
+			"title": "",
+			"description": "",
+			"package": {
+				"id": "30a546bc-adb8-4c8d-b0f8-151b2a714967"
+			}
+		},
+		{
+			"id": "ac8e4bdd-91e5-4e1f-b614-8aade405b2f8",
+			"application": "neptune_connector_odata",
+			"title": "OData Connector",
+			"description": "OData Connector",
+			"package": {
+				"id": "30a546bc-adb8-4c8d-b0f8-151b2a714967"
+			}
+		},
+		{
+			"id": "9208d78b-029a-4f51-9d34-b8d1832bde86",
+			"application": "neptune_connector_servicenow",
+			"title": "ServiceNow Connector",
+			"description": "ServiceNow Connector",
+			"package": {
+				"id": "30a546bc-adb8-4c8d-b0f8-151b2a714967"
+			}
+		},
+		{
+			"id": "8c319344-c115-40d9-b298-74ddf727693b",
+			"application": "neptune_connector_salesforce",
+			"title": "Saleforce Connector",
+			"description": "Saleforce Connector",
+			"package": {
+				"id": "30a546bc-adb8-4c8d-b0f8-151b2a714967"
+			}
+		},
+		{
+			"id": "5cbaca0f-d849-425b-8780-b0642303ddfa",
+			"application": "neptune_connector_planet9",
+			"title": "Open Edition Connector",
+			"description": "Open Edition Connector",
+			"package": {
+				"id": "30a546bc-adb8-4c8d-b0f8-151b2a714967"
+			}
+		},
+		{
+			"id": "14931031-0f92-4cfa-837c-1f9837f37490",
+			"application": "neptune_connector_hanadb",
+			"title": "HANA DB Connector",
+			"description": "HANA DB Connector",
+			"package": {
+				"id": "30a546bc-adb8-4c8d-b0f8-151b2a714967"
+			}
+		},
+		{
+			"id": "07487fb4-130b-4f82-83d9-d4e3bf6c519d",
+			"application": "neptune_migration_mssql",
+			"title": "MS SQL Server",
+			"description": "MS SQL Server",
+			"package": {
+				"id": "30a546bc-adb8-4c8d-b0f8-151b2a714967"
+			}
+		}
+	],
+	"api": [
+		{
+			"id": "786a81ca-5973-45fa-b311-c348916d230a",
+			"name": "Neptune Adaptive Framework Connector",
+			"description": "Neptune Adaptive Framework Connector",
+			"apiGroup": "5c76d2dc-2881-41d5-8db1-cd2bb3cd8d4f"
+		}
+	],
+	"odataSource": [],
+	"odataMock": [],
+	"dictionary": [
+		{
+			"id": "fcd4c787-3174-435e-9a02-3895b7d76cc2",
+			"name": "neptune_af_connector_auth",
+			"description": "Adaptive Framework Connector: Auth"
+		},
+		{
+			"id": "bb5d0142-b1a0-4f53-b3be-e6affbe1d014",
+			"name": "neptune_af_connector_dburi",
+			"description": "Adaptive Framework Connector: DB Connection URI"
+		},
+		{
+			"id": "a572b86e-4f36-422c-8043-90eae252246d",
+			"name": "neptune_af_connector",
+			"description": "Adaptive Framework Connector"
+		},
+		{
+			"id": "5703f6bd-5b68-4695-a2a1-3ae7fb45c999",
+			"name": "neptune_af_connector_role",
+			"description": "Adaptive Framework Connector: Roles"
+		},
+		{
+			"id": "45770513-16d2-40a2-9ced-185dade3ae64",
+			"name": "neptune_af_connector_db",
+			"description": "Adaptive Framework Connector: DB Connection"
+		}
+	],
+	"jsclass": [
+		{
+			"id": "fd2bb3d2-91fd-4e2d-8656-07e0b442d313",
+			"name": "HanaSchema",
+			"description": null
+		},
+		{
+			"id": "f998fbcc-6bbd-4610-a196-d1d60abbd1a3",
+			"name": "MSSQLAdaptiveSetup",
+			"description": null
+		},
+		{
+			"id": "f87d1fe0-a811-41d1-8511-aaa6cb66f0fd",
+			"name": "Planet9Entity",
+			"description": null
+		},
+		{
+			"id": "f0138351-ad95-486b-97a7-21b0fcc30240",
+			"name": "clientSave",
+			"description": null
+		},
+		{
+			"id": "dde08a65-ec1d-429d-9c67-e178e4b7a15d",
+			"name": "HanaAdaptiveRun",
+			"description": null
+		},
+		{
+			"id": "dd8c5a6a-f5db-42c1-9a10-c1f74ddc7506",
+			"name": "SalesforceAdaptiveSetup",
+			"description": null
+		},
+		{
+			"id": "bfcb3616-29fc-403a-9594-a6c98d57c3e3",
+			"name": "ODataServices",
+			"description": null
+		},
+		{
+			"id": "b9ac8010-b74d-49a8-a1aa-cf0487d5d176",
+			"name": "ServiceNowTable",
+			"description": null
+		},
+		{
+			"id": "b8353950-399a-493f-8952-4f176a7386a5",
+			"name": "clientList",
+			"description": null
+		},
+		{
+			"id": "b786f6ca-84f3-4ef1-b6c2-870b01246d8e",
+			"name": "ODataEntitySetFields",
+			"description": null
+		},
+		{
+			"id": "b3a8b56b-9a2c-48c8-a198-f5d269841ef6",
+			"name": "ODataEntitySet",
+			"description": null
+		},
+		{
+			"id": "ae1623e0-4640-454f-a058-ce7f361e52ec",
+			"name": "SalesforceObject",
+			"description": null
+		},
+		{
+			"id": "ab17f37f-ffae-464e-8c7a-9148ee9f3d16",
+			"name": "Planet9Entities",
+			"description": null
+		},
+		{
+			"id": "a75c7347-a8ad-4d56-824e-51ce4e2b4d3f",
+			"name": "ServiceNowItems",
+			"description": null
+		},
+		{
+			"id": "910cde3b-8798-49d9-b0fc-18030b86f5a3",
+			"name": "MSSQLSchema",
+			"description": null
+		},
+		{
+			"id": "864bb8b9-208f-404b-9403-6a06dda9b03c",
+			"name": "MSSQLFields",
+			"description": null
+		},
+		{
+			"id": "82c9459e-bc38-4df9-98d3-080bcda58b22",
+			"name": "ODataAdaptiveSetup",
+			"description": "OData Setup Script"
+		},
+		{
+			"id": "7b559283-4b5b-4742-b646-e27474b6b9c7",
+			"name": "ServiceNowTables",
+			"description": null
+		},
+		{
+			"id": "715f3ab8-daa6-45ae-a648-80a4ada0d180",
+			"name": "clientGet",
+			"description": null
+		},
+		{
+			"id": "6ec72fc2-c411-401d-bd1c-b41dfbaf9156",
+			"name": "Utils",
+			"description": null
+		},
+		{
+			"id": "6ddd1b3b-6f87-4a07-8200-2bed82af1369",
+			"name": "Planet9AdaptiveSetup",
+			"description": null
+		},
+		{
+			"id": "673eebd6-cb9e-4c85-9164-c3fea3cad947",
+			"name": "SalesforceAdaptiveRun",
+			"description": null
+		},
+		{
+			"id": "59d2898d-fed6-42c4-8c20-6f608f8d08a1",
+			"name": "ServiceNowAdaptiveSetup",
+			"description": null
+		},
+		{
+			"id": "507e64ae-a28f-47fb-a6d8-2bccca4d8613",
+			"name": "HanaTables",
+			"description": null
+		},
+		{
+			"id": "4a64df7b-bce9-482c-92f4-b0a8054ea75b",
+			"name": "ODataAdaptiveRun",
+			"description": "OData Run Script"
+		},
+		{
+			"id": "482e0e79-92b0-4fff-8d88-3b501c655d71",
+			"name": "Planet9AdaptiveRun",
+			"description": null
+		},
+		{
+			"id": "2b32bb3f-1672-4c55-8581-f433af2de1a2",
+			"name": "MSSQLTables",
+			"description": null
+		},
+		{
+			"id": "2a0e920e-225d-43f6-879a-962216222afe",
+			"name": "ServiceNowAdaptiveRun",
+			"description": null
+		},
+		{
+			"id": "2164f706-11f3-4a56-b50a-10ac4167f4ae",
+			"name": "HanaFields",
+			"description": null
+		},
+		{
+			"id": "1509c7e7-5115-4022-8fab-b2c4a6aca1ec",
+			"name": "HanaAdaptiveSetup",
+			"description": null
+		},
+		{
+			"id": "101c5ddb-17c2-428e-84a4-35c421c0512d",
+			"name": "MSSQLQuery",
+			"description": ""
+		},
+		{
+			"id": "0e07b97e-8836-4ac0-86af-4bd3fa0907a0",
+			"name": "SalesforceObjects",
+			"description": null
+		},
+		{
+			"id": "08579743-0006-48bb-85d6-8f1de21fe0ba",
+			"name": "clientDelete",
+			"description": null
+		},
+		{
+			"id": "06fa3902-6509-4e4a-aea5-df65fb8532b2",
+			"name": "MSSQLExport",
+			"description": ""
+		},
+		{
+			"id": "0321987c-1ecf-4757-908f-9c5540fbc0c6",
+			"name": "MSSQLAdaptiveRun",
+			"description": null
+		},
+		{
+			"id": "00089936-a679-409b-b608-5020e82b6840",
+			"name": "MSSQLCount",
+			"description": ""
+		}
+	],
+	"jsscript_group": [
+		{
+			"id": "8407e587-50c3-4d42-bb2e-35abf1281c47",
+			"name": "NeptuneConnectors",
+			"description": "Adaptive Framework Connectors"
+		}
+	],
+	"theme": [],
+	"pdf": [],
+	"rulesengine": [],
+	"reports": [
+		{
+			"id": "c489e0d6-4617-4aec-888e-1419ae7eab12",
+			"name": "neptune_ac_connector_db_create",
+			"description": "",
+			"application": "planet9_adaptive_edit"
+		},
+		{
+			"id": "8605b3e8-c1e0-47b1-9125-13933ec6233e",
+			"name": "neptune_af_connector_auth_detail",
+			"description": "",
+			"application": "planet9_adaptive_edit"
+		},
+		{
+			"id": "8301a1c4-64f7-4557-9078-f24369158c5d",
+			"name": "neptune_af_connector_dburi_detail",
+			"description": "",
+			"application": "planet9_adaptive_edit"
+		},
+		{
+			"id": "7a99945b-bd99-4218-995f-764652b36e6d",
+			"name": "neptune_af_connector_db_list",
+			"description": "",
+			"application": "planet9_adaptive_list"
+		},
+		{
+			"id": "5d2ac95a-0486-45bb-a88a-04f1bed585d8",
+			"name": "neptune_af_connector_auth_list",
+			"description": "",
+			"application": "planet9_adaptive_list"
+		},
+		{
+			"id": "03203049-b8ae-4ef1-9f6d-b4736f295d13",
+			"name": "neptune_ac_connector_db_detail",
+			"description": "",
+			"application": "planet9_adaptive_edit"
+		},
+		{
+			"id": "00ea19e3-3e85-4916-89c0-e1d5168c3352",
+			"name": "neptune_af_connector_dburi_list",
+			"description": "",
+			"application": "planet9_adaptive_list"
+		}
+	],
+	"api_authentication": [],
+	"api_group": [
+		{
+			"id": "5c76d2dc-2881-41d5-8db1-cd2bb3cd8d4f",
+			"name": "Adaptive Framework Connector",
+			"description": "Adaptive Framework Connector"
+		}
+	],
+	"tile": [
+		{
+			"id": "97410b27-9c82-48ba-86b5-504622db44e4",
+			"description": "Connect Adaptive Framework to SAP OData",
+			"name": "Adaptive Framework Connector: OData Connector"
+		},
+		{
+			"id": "8ccfd807-d5f0-48dc-9770-334876e3035b",
+			"description": "Register local user for usage of proxy server",
+			"name": "Adaptive Framework Connector: Local Auth"
+		},
+		{
+			"id": "79035bcf-ec79-4b5e-a036-97884af90db3",
+			"description": "Connect Adaptive Framework to HANA Database",
+			"name": "Adaptive Framework Connector: HANA Database"
+		},
+		{
+			"id": "4d5fc771-5a19-4d4b-9de9-59d129beee04",
+			"description": "Connect Adaptive Framework to Open Edition System Data",
+			"name": "Adaptive Framework Connector: Open Edition Connector"
+		},
+		{
+			"id": "3b3d79a9-9f3f-427e-87e0-a97d6859b418",
+			"description": "Define database connection string",
+			"name": "Adaptive Framework Connector: Database Connections"
+		},
+		{
+			"id": "2abccfae-f20f-4e40-8db0-0b26520095ea",
+			"description": "Connect Adaptive Framework to ServiceNow  ",
+			"name": "Adaptive Framework Connector: ServiceNow Connector"
+		},
+		{
+			"id": "1dcd1af6-1cee-492e-8194-09c04f4bd517",
+			"description": "Migration MS SQL Server to Neptune DB",
+			"name": "Adaptive Framework Connector: MS SQL Server Migration"
+		},
+		{
+			"id": "1c426bb7-102f-4e35-bb50-adb157229021",
+			"description": "Connect Adaptive Framework to Salesforce ",
+			"name": "Adaptive Framework Connector: Salesforce Connector "
+		},
+		{
+			"id": "104f23dc-fa97-4814-b15f-cb5e168c57e0",
+			"description": "Connect Adaptive Framework to MS SQL Server",
+			"name": "Adaptive Framework Connector: MS SQL Server"
+		}
+	],
+	"category": [
+		{
+			"id": "0bb57573-5d51-4637-8833-13195df55a98",
+			"description": null,
+			"name": "Neptune Extended Connectors"
+		}
+	],
+	"launchpad": [],
+	"certificates": [],
+	"role": [
+		{
+			"id": "87925322-9fd3-453b-a018-f2add088a820",
+			"name": "neptunesoftware-connectors",
+			"description": "Adaptive Framework Connectors"
+		}
+	],
+	"systems": [],
+	"doc": [],
+	"wf_notifications": [],
+	"department": [],
+	"script_scheduler": [],
+	"wf_definition": [],
+	"connector": [
+		{
+			"id": "5136c2d8-8620-48ba-adfc-a270ca0c19c7",
+			"name": "Neptune Adaptive Connector DB URI",
+			"description": "Neptune Extended Connectors"
+		},
+		{
+			"id": "35609f0f-fd34-4656-b371-6fe70b4245e5",
+			"name": "Neptune Adaptive Connector Auth",
+			"description": "Neptune Extended Connectors"
+		},
+		{
+			"id": "1ce3b230-1885-4917-a5b8-fe54f10ac537",
+			"name": "Neptune Adaptive Connector DB",
+			"description": "Neptune Extended Connectors"
+		}
+	],
+	"events": [],
+	"code_snippets": [],
+	"wf_determination": [],
+	"wf_taskaction": []
+}

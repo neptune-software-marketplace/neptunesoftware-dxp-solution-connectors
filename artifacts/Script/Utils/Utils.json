@@ -1,0 +1,51 @@
+{
+	"id": "6ec72fc2-c411-401d-bd1c-b41dfbaf9156",
+	"createdAt": "2023-02-13T18:19:46.000Z",
+	"createdBy": "ole-andre.haugen@neptune-software.com",
+	"globalScripts": [],
+	"externalModules": [
+		{
+			"id": "c1e44158-f85b-48c3-85df-cd3bb1f6c7f4",
+			"name": "typeorm",
+			"contextname": "typeorm",
+			"path": "typeorm"
+		},
+		{
+			"id": "264d7bbf-202a-49ac-9d9a-c0a6f7ee9de4",
+			"name": "hdb",
+			"contextname": "hdb",
+			"path": "C:\\Planet9\\customnpm/node_modules/hdb"
+		},
+		{
+			"id": "e44be02d-3c08-4515-b6d8-a1912913aafb",
+			"name": "mssql",
+			"contextname": "mssql",
+			"path": "C:\\Planet9\\customnpm/node_modules/mssql"
+		}
+	],
+	"entitySets": [
+		{
+			"id": "fcd4c787-3174-435e-9a02-3895b7d76cc2",
+			"name": "neptune_af_connector_auth",
+			"contextname": "neptune_af_connector_auth"
+		},
+		{
+			"id": "bb5d0142-b1a0-4f53-b3be-e6affbe1d014",
+			"name": "neptune_af_connector_dburi",
+			"contextname": "neptune_af_connector_dburi"
+		}
+	],
+	"apis": [],
+	"name": "Utils",
+	"ver": "24.04.04.1144",
+	"description": null,
+	"folder": null,
+	"content": "file:///content.js",
+	"useAsGlobalScript": true,
+	"transpiledContent": null,
+	"lastRunSuccessful": true,
+	"isTypescript": false,
+	"language": "javascript",
+	"jsscriptGroup": "8407e587-50c3-4d42-bb2e-35abf1281c47",
+	"package": "30a546bc-adb8-4c8d-b0f8-151b2a714967"
+}

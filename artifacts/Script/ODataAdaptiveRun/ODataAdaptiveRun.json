@@ -1,0 +1,33 @@
+{
+	"id": "4a64df7b-bce9-482c-92f4-b0a8054ea75b",
+	"createdAt": "2023-02-06T19:38:00.000Z",
+	"createdBy": "ole-andre.haugen@neptune-software.com",
+	"globalScripts": [
+		{
+			"id": "6ec72fc2-c411-401d-bd1c-b41dfbaf9156",
+			"name": "NeptuneConnectors - Utils",
+			"contextname": "Utils"
+		}
+	],
+	"externalModules": [],
+	"entitySets": [
+		{
+			"id": "a572b86e-4f36-422c-8043-90eae252246d",
+			"name": "neptune_af_connector",
+			"contextname": "neptune_af_connector"
+		}
+	],
+	"apis": [],
+	"name": "ODataAdaptiveRun",
+	"ver": "24.04.04.1130",
+	"description": "OData Run Script",
+	"folder": null,
+	"content": "file:///content.js",
+	"useAsGlobalScript": false,
+	"transpiledContent": null,
+	"lastRunSuccessful": false,
+	"isTypescript": false,
+	"language": "javascript",
+	"jsscriptGroup": "8407e587-50c3-4d42-bb2e-35abf1281c47",
+	"package": "30a546bc-adb8-4c8d-b0f8-151b2a714967"
+}
