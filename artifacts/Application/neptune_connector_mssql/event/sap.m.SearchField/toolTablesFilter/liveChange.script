@@ -1,10 +1,35 @@
 const binding = tabTables.getBinding("rows");
+const searchValue = this.getValue().trim();
 
-const filter = new sap.ui.model.Filter({
+const typeMap = {
+  RadioButtonSP: "P ",
+  RadioButtonTables: "U ",
+  RadioButtonViews: "V "
+};
+
+// Find selected radio button type
+let selectedType = null;
+if (RadioButtonSP.getSelected()) selectedType = typeMap.RadioButtonSP;
+else if (RadioButtonTables.getSelected()) selectedType = typeMap.RadioButtonTables;
+else if (RadioButtonViews.getSelected()) selectedType = typeMap.RadioButtonViews;
+
+let filter;
+
+if (selectedType) {
+  // Filter by type AND name contains
+  filter = new sap.ui.model.Filter({
     filters: [
-        new sap.ui.model.Filter("name", "Contains", this.getValue()),
+      new sap.ui.model.Filter("type", "EQ", selectedType),
+      new sap.ui.model.Filter("name", "Contains", searchValue)
     ],
-    and: false,
-});
+    and: true
+  });
+} else if (RadioButtonALL.getSelected()) {
+  // Filter only by name contains (no type filter)
+  filter = new sap.ui.model.Filter("name", "Contains", searchValue);
+} else {
+  // No filter selected, show all
+  filter = null;
+}
 
-binding.filter([filter]);
+binding.filter(filter ? [filter] : []);

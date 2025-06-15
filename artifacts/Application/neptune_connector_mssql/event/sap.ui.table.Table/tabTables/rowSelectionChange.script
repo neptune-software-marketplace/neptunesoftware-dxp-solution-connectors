@@ -15,6 +15,12 @@ if (context) {
             modeloPageDetail.oData.config.isview = false;
         }
 
+        if(data.type == 'P '){
+            modeloPageDetail.oData.config.isProcedure = true;
+        } else {
+            modeloPageDetail.oData.config.isProcedure = false;
+        }
+        
         controller.updateFields();
     }
 

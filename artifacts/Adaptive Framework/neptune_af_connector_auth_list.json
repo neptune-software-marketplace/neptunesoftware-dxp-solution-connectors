@@ -56,7 +56,11 @@
 					"destinationTargetF": "8605b3e8-c1e0-47b1-9125-13933ec6233e",
 					"keyField": [],
 					"dialogHeight": "700px"
-				}
+				},
+				"requiredFieldsToast": "Please fill in all required fields",
+				"textConfirmDelete": "Do you want to delete this entry ? ",
+				"titleConfirmDelete": "Delete",
+				"odataValueList": "Field does not have any OData ValueList reference"
 			},
 			"form": {
 				"enableCompact": false,
@@ -86,7 +90,8 @@
 				"action4Text": "",
 				"action4Type": "Transparent",
 				"action5Text": "",
-				"action5Type": "Transparent"
+				"action5Type": "Transparent",
+				"enableAutoPopin": false
 			}
 		},
 		"fieldCatalog": [
@@ -211,7 +216,40 @@
 			"val": [],
 			"inclusions": {},
 			"exclusions": {}
-		}
+		},
+		"translation": {
+			"EN": {
+				"report": {
+					"title": "",
+					"subTitle": "",
+					"textButtonClose": "",
+					"textButtonCreate": "",
+					"textButtonExport": "",
+					"textButtonImport": "",
+					"textButtonMultiSelect": "",
+					"textButtonRun": "",
+					"searchLabel": "",
+					"searchPlaceholder": "",
+					"requiredFieldsToast": "",
+					"textConfirmDelete": "",
+					"titleConfirmDelete": "",
+					"odataValueList": ""
+				},
+				"form": {},
+				"table": {
+					"headerText": "",
+					"footerText": "",
+					"noDataText": "",
+					"action1Tooltip": "",
+					"action2Tooltip": "",
+					"action3Tooltip": "",
+					"action4Tooltip": "",
+					"action5Tooltip": ""
+				},
+				"fieldCatalog": {}
+			}
+		},
+		"table": "neptune_af_connector_auth"
 	},
 	"name": "neptune_af_connector_auth_list",
 	"description": "",
@@ -221,10 +259,10 @@
 	"scriptSel": null,
 	"scriptRun": null,
 	"tableid": null,
-	"ver": "23.3.23.556",
+	"ver": "25.06.15.1147",
 	"disabled": false,
 	"appType": "A",
-	"application": "planet9_adaptive_list",
+	"application": "neptunedxp_adaptive_list",
 	"package": "30a546bc-adb8-4c8d-b0f8-151b2a714967",
 	"roles": [],
 	"scriptSelObj": null,

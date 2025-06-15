@@ -39,6 +39,19 @@ try {
     complete();
 }
 
+function buildProcedureParams(body) {
+    return Object.entries(body)
+        .filter(([key]) => !key.startsWith("_") && body[key] !== "")
+        .map(([key, value]) => {
+            // Remove any leading '@' from key
+            const paramName = key.startsWith("@") ? key.slice(1) : key;
+            // Escape single quotes in value
+            const escapedValue = value.replace(/'/g, "''");
+            return `@${paramName} = '${escapedValue}'`;
+        })
+        .join(", ");
+}
+
 async function processList() {
     let sep = "";
     let fields = "";
@@ -46,6 +59,8 @@ async function processList() {
     let where = "";
     let statementExec;
     let statementCount;
+
+    const procedureParams = buildProcedureParams(req.body);
 
     try {
         // Where
@@ -134,8 +149,12 @@ async function processList() {
             return { error: "No fields to display in table" };
         }
 
-        // Count
-        statementCount = `select count(*) as __COUNTER from "${connector.config.schema}"."${connector.config.table}" as ${connector.config.table} ${joins} ${where}`;
+        if (connector.config.isProcedure === true) {
+            statementCount = `EXEC ${connector.config.schema}.${connector.config.table} ${procedureParams}`;
+        } else {
+            // Count
+            statementCount = `select count(*) as __COUNTER from "${connector.config.schema}"."${connector.config.table}" as ${connector.config.table} ${joins} ${where}`;
+        }
 
         const resCount = await globals.Utils.MSSQLExec(connector.systemid, statementCount);
 
@@ -152,8 +171,13 @@ async function processList() {
         // All if no fields are specified
         if (!fields) fields = "*";
 
-        // SQL Statement
-        statementExec = `select ${fields} from "${connector.config.schema}"."${connector.config.table}" as ${connector.config.table} ${joins} ${where}`;
+        if (connector.config.isProcedure === true) {
+            // porcedure Statement
+            statementExec = `EXEC ${connector.config.schema}.${connector.config.table} ${procedureParams}`;
+        } else {
+            // SQL Statement
+            statementExec = `select ${fields} from "${connector.config.schema}"."${connector.config.table}" as ${connector.config.table} ${joins} ${where}`;
+        }
 
         // Sorting
         if (req.body._order) {
@@ -214,6 +238,8 @@ async function processList() {
 async function processSave() {
     const bodyFields = Object.keys(req.body);
 
+    const procedureParams = buildProcedureParams(req.body);
+
     let where = "";
     let sep = "";
     let fields = "";
@@ -268,7 +294,11 @@ async function processSave() {
             }
         });
 
-        statement = `INSERT INTO "${connector.config.schema}"."${connector.config.table}" (${fields}) VALUES (${values})`;
+        if (connector.config.isProcedure === true) {
+            statement = `EXEC ${connector.config.schema}.${connector.config.table} ${procedureParams}`;
+        } else {
+            statement = `INSERT INTO "${connector.config.schema}"."${connector.config.table}" (${fields}) VALUES (${values})`;
+        }
     } else {
         bodyFields.forEach(function (fieldName) {
             const fieldValue = req.body[fieldName];
@@ -305,7 +335,11 @@ async function processSave() {
             }
         });
 
-        statement = `UPDATE "${connector.config.schema}"."${connector.config.table}" SET ${fields} WHERE ${where}`;
+        if (connector.config.isProcedure === true) {
+            statement = `EXEC ${connector.config.schema}.${connector.config.table} ${procedureParams}`;
+        } else {
+            statement = `UPDATE "${connector.config.schema}"."${connector.config.table}" SET ${fields} WHERE ${where}`;
+        }
     }
 
     const res = await globals.Utils.MSSQLExec(connector.systemid, statement);
@@ -329,6 +363,8 @@ async function processGet() {
     let where = "";
     let joins = "";
     let statement;
+
+    const procedureParams = buildProcedureParams(req.body);
 
     try {
         // Where
@@ -392,9 +428,12 @@ async function processGet() {
             });
         }
 
-        // SQL Statement
-        statement = `select top 1 ${fields} from "${connector.config.schema}"."${connector.config.table}" as ${connector.config.table} ${joins} ${where}`;
-
+        if (connector.config.isProcedure === true) {
+            statement = `EXEC ${connector.config.schema}.${connector.config.table} ${procedureParams}`;
+        } else {
+            // SQL Statement
+            statement = `select top 1 ${fields} from "${connector.config.schema}"."${connector.config.table}" as ${connector.config.table} ${joins} ${where}`;
+        }
         // Query Table
         const resData = await globals.Utils.MSSQLExec(connector.systemid, statement);
 
@@ -425,6 +464,8 @@ async function processDelete() {
     let where = "";
     let sep = "";
 
+    const procedureParams = buildProcedureParams(req.body);
+
     // Find Unique Row ID
     connector.config.fields.forEach(async function (field) {
         if (field.is_identity && req.body.data[field.name]) {
@@ -444,9 +485,12 @@ async function processDelete() {
         return;
     }
 
-    // SQL Statement
-    statement = `delete from "${connector.config.schema}"."${connector.config.table}" where ${where}`;
-
+    if (connector.config.isProcedure === true) {
+        statement = `EXEC ${connector.config.schema}.${connector.config.table} ${procedureParams}`;
+    } else {
+        // SQL Statement
+        statement = `delete from "${connector.config.schema}"."${connector.config.table}" where ${where}`;
+    }
     // Query Table
     const res = await globals.Utils.MSSQLExec(connector.systemid, statement);
 

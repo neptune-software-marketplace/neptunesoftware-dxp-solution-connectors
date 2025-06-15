@@ -298,43 +298,43 @@
 			"id": "c489e0d6-4617-4aec-888e-1419ae7eab12",
 			"name": "neptune_ac_connector_db_create",
 			"description": "",
-			"application": "planet9_adaptive_edit"
+			"application": "neptunedxp_adaptive_edit"
 		},
 		{
 			"id": "8605b3e8-c1e0-47b1-9125-13933ec6233e",
 			"name": "neptune_af_connector_auth_detail",
 			"description": "",
-			"application": "planet9_adaptive_edit"
+			"application": "neptunedxp_adaptive_edit"
 		},
 		{
 			"id": "8301a1c4-64f7-4557-9078-f24369158c5d",
 			"name": "neptune_af_connector_dburi_detail",
 			"description": "",
-			"application": "planet9_adaptive_edit"
+			"application": "neptunedxp_adaptive_edit"
 		},
 		{
 			"id": "7a99945b-bd99-4218-995f-764652b36e6d",
 			"name": "neptune_af_connector_db_list",
 			"description": "",
-			"application": "planet9_adaptive_list"
+			"application": "neptunedxp_adaptive_list"
 		},
 		{
 			"id": "5d2ac95a-0486-45bb-a88a-04f1bed585d8",
 			"name": "neptune_af_connector_auth_list",
 			"description": "",
-			"application": "planet9_adaptive_list"
+			"application": "neptunedxp_adaptive_list"
 		},
 		{
 			"id": "03203049-b8ae-4ef1-9f6d-b4736f295d13",
 			"name": "neptune_ac_connector_db_detail",
 			"description": "",
-			"application": "planet9_adaptive_edit"
+			"application": "neptunedxp_adaptive_edit"
 		},
 		{
 			"id": "00ea19e3-3e85-4916-89c0-e1d5168c3352",
 			"name": "neptune_af_connector_dburi_list",
 			"description": "",
-			"application": "planet9_adaptive_list"
+			"application": "neptunedxp_adaptive_list"
 		}
 	],
 	"api_authentication": [],

@@ -17,10 +17,16 @@
 			"path": "typeorm"
 		}
 	],
-	"entitySets": [],
+	"entitySets": [
+		{
+			"id": "a572b86e-4f36-422c-8043-90eae252246d",
+			"name": "neptune_af_connector",
+			"contextname": "neptune_af_connector"
+		}
+	],
 	"apis": [],
 	"name": "MSSQLExport",
-	"ver": "24.06.28.0740",
+	"ver": "25.06.15.1202",
 	"description": "",
 	"folder": "MSSQL",
 	"content": "file:///content.js",

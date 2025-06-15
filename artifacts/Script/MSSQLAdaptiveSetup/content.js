@@ -12,9 +12,21 @@ for (let i = 0; i < connector.config.fields.length; i++) {
     const field = connector.config.fields[i];
 
     if (field.sel) {
-        let usage = "BOTH";
+        let usage = "";
         let type = "string";
         let items = [];
+
+    if (connector.config.isProcedure) {
+        if (!field.is_output) {
+            usage = "INPUT";
+        } else if (field.is_output) {
+            usage = "OUTPUT";
+        } else{
+            usage = "BOTH";
+        }
+    } else {
+        usage = "BOTH";
+    }
 
         // Type
         switch (field.type) {
@@ -73,7 +85,7 @@ for (let i = 0; i < connector.config.fields.length; i++) {
                         name: field.joinTable + "." + joinField.name,
                         label: joinField.label,
                         type: joinField.type,
-                        usage: "BOTH",
+                        usage: usage,
                     });
                 }
             });

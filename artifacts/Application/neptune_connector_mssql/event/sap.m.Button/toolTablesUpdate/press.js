@@ -16,7 +16,7 @@ apiGetTables({
         } else {
             modeltabTables.setData(res);
             modeltabTables.refresh();
-            diaTables.setTitle("MS SQL Server Tables (" + res.length + ")");
+            diaTables.setTitle("MS SQL Server Tables/Stored Procedures/Views (" + res.length + ")");
         }
     },
     function (error) {

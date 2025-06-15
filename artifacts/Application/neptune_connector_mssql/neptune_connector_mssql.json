@@ -2214,7 +2214,7 @@
 																		{
 																			"attribute": "text",
 																			"grouping": "Properties",
-																			"value": "Table",
+																			"value": "Table/Stored Procedure/Views",
 																			"script": "",
 																			"translation": []
 																		},
@@ -3155,6 +3155,103 @@
 																	"data": []
 																}
 															]
+														}
+													]
+												},
+												{
+													"fieldNo": "80631ecc-eb69-4fd2-df7b-eb52e6a8e035",
+													"fieldName": "coltabFieldsIcon",
+													"fieldParent": "96ed159c-a534-49bc-e583-474d99ba6383",
+													"fieldType": "sap.ui.table.Column",
+													"script": "",
+													"customComponent": false,
+													"request": [],
+													"response": [],
+													"attributes": [
+														{
+															"attribute": "label",
+															"grouping": "Properties",
+															"value": "Input/Output",
+															"script": "",
+															"translation": []
+														},
+														{
+															"attribute": "sorted",
+															"grouping": "Properties",
+															"value": "false",
+															"script": "",
+															"translation": []
+														},
+														{
+															"attribute": "sortOrder",
+															"grouping": "Properties",
+															"value": "Ascending",
+															"script": "",
+															"translation": []
+														},
+														{
+															"attribute": "visible",
+															"grouping": "Properties",
+															"value": "true",
+															"script": "",
+															"translation": []
+														},
+														{
+															"attribute": "width",
+															"grouping": "Properties",
+															"value": "100px",
+															"script": "",
+															"translation": []
+														},
+														{
+															"attribute": "hAlign",
+															"grouping": "Properties",
+															"value": "Center",
+															"script": "",
+															"translation": []
+														},
+														{
+															"attribute": "autoResizable",
+															"grouping": "Properties",
+															"value": "false",
+															"script": "",
+															"translation": []
+														}
+													],
+													"data": [
+														{
+															"fieldNo": "26251a9b-82f4-49eb-d3a7-a1873290ab97",
+															"fieldName": "Icon",
+															"fieldParent": "80631ecc-eb69-4fd2-df7b-eb52e6a8e035",
+															"fieldType": "sap.ui.core.Icon",
+															"script": "",
+															"customComponent": false,
+															"request": [],
+															"response": [],
+															"attributes": [
+																{
+																	"attribute": "src",
+																	"grouping": "Properties",
+																	"value": "{is_output}",
+																	"script": "",
+																	"translation": []
+																},
+																{
+																	"attribute": "size",
+																	"grouping": "Properties",
+																	"value": "25px",
+																	"script": "",
+																	"translation": []
+																},
+																{
+																	"attribute": "src",
+																	"grouping": "Formatter",
+																	"value": "Anonymous Function",
+																	"script": "file://event/sap.ui.core.Icon/Icon/src.script",
+																	"translation": []
+																}
+															],
+															"data": []
 														}
 													]
 												},
@@ -5745,7 +5842,7 @@
 								{
 									"attribute": "title",
 									"grouping": "Properties",
-									"value": "MS SQL Server Tables (0)",
+									"value": "MS SQL Server Tables/Stored Procedures/Views (0)",
 									"script": "",
 									"translation": []
 								},
@@ -5935,6 +6032,160 @@
 														}
 													],
 													"data": []
+												},
+												{
+													"fieldNo": "e80dd6b1-c08a-4957-8798-8d736b307af9",
+													"fieldName": "RadioButtonGroup",
+													"fieldParent": "1d045ae6-6bc9-4f58-d572-5545ed97efac",
+													"fieldType": "sap.m.RadioButtonGroup",
+													"script": "",
+													"customComponent": false,
+													"request": [],
+													"response": [],
+													"attributes": [
+														{
+															"attribute": "columns",
+															"grouping": "Properties",
+															"value": "4",
+															"script": "",
+															"translation": []
+														}
+													],
+													"data": [
+														{
+															"fieldNo": "82fb9c90-06a4-4029-c9fe-36698eafdd7d",
+															"fieldName": "RadioButtonALL",
+															"fieldParent": "e80dd6b1-c08a-4957-8798-8d736b307af9",
+															"fieldType": "sap.m.RadioButton",
+															"script": "",
+															"customComponent": false,
+															"request": [],
+															"response": [],
+															"attributes": [
+																{
+																	"attribute": "select",
+																	"grouping": "Events",
+																	"value": "Anonymous Function",
+																	"script": "file://event/sap.m.RadioButton/RadioButtonALL/select.js",
+																	"language": "javascript",
+																	"translation": []
+																},
+																{
+																	"attribute": "text",
+																	"grouping": "Properties",
+																	"value": "All",
+																	"script": "",
+																	"translation": []
+																},
+																{
+																	"attribute": "selected",
+																	"grouping": "Properties",
+																	"value": "true",
+																	"script": "",
+																	"translation": []
+																}
+															],
+															"data": []
+														},
+														{
+															"fieldNo": "f0e006e6-d1f7-4577-9b01-e49afb9288de",
+															"fieldName": "RadioButtonTables",
+															"fieldParent": "e80dd6b1-c08a-4957-8798-8d736b307af9",
+															"fieldType": "sap.m.RadioButton",
+															"script": "",
+															"customComponent": false,
+															"request": [],
+															"response": [],
+															"attributes": [
+																{
+																	"attribute": "select",
+																	"grouping": "Events",
+																	"value": "Anonymous Function",
+																	"script": "file://event/sap.m.RadioButton/RadioButtonTables/select.js",
+																	"language": "javascript",
+																	"translation": []
+																},
+																{
+																	"attribute": "text",
+																	"grouping": "Properties",
+																	"value": "Tables",
+																	"script": "",
+																	"translation": []
+																},
+																{
+																	"attribute": "selected",
+																	"grouping": "Properties",
+																	"value": "false",
+																	"script": "",
+																	"translation": []
+																}
+															],
+															"data": []
+														},
+														{
+															"fieldNo": "4bc549f3-4d0c-40ee-abb8-f4ee3859b35f",
+															"fieldName": "RadioButtonViews",
+															"fieldParent": "e80dd6b1-c08a-4957-8798-8d736b307af9",
+															"fieldType": "sap.m.RadioButton",
+															"script": "",
+															"customComponent": false,
+															"request": [],
+															"response": [],
+															"attributes": [
+																{
+																	"attribute": "select",
+																	"grouping": "Events",
+																	"value": "Anonymous Function",
+																	"script": "file://event/sap.m.RadioButton/RadioButtonViews/select.js",
+																	"language": "javascript",
+																	"translation": []
+																},
+																{
+																	"attribute": "text",
+																	"grouping": "Properties",
+																	"value": "Views",
+																	"script": "",
+																	"translation": []
+																}
+															],
+															"data": []
+														},
+														{
+															"fieldNo": "c4ed7b5b-5a40-411b-b2a6-e43ef7ea14fb",
+															"fieldName": "RadioButtonSP",
+															"fieldParent": "e80dd6b1-c08a-4957-8798-8d736b307af9",
+															"fieldType": "sap.m.RadioButton",
+															"script": "",
+															"customComponent": false,
+															"request": [],
+															"response": [],
+															"attributes": [
+																{
+																	"attribute": "select",
+																	"grouping": "Events",
+																	"value": "Anonymous Function",
+																	"script": "file://event/sap.m.RadioButton/RadioButtonSP/select.js",
+																	"language": "javascript",
+																	"translation": []
+																},
+																{
+																	"attribute": "text",
+																	"grouping": "Properties",
+																	"value": "Stored Procedure",
+																	"script": "",
+																	"translation": []
+																},
+																{
+																	"attribute": "selected",
+																	"grouping": "Properties",
+																	"value": "false",
+																	"script": "",
+																	"translation": []
+																}
+															],
+															"data": []
+														}
+													]
 												}
 											]
 										},
@@ -6279,7 +6530,7 @@
 		}
 	],
 	"componentInterface": [],
-	"ver": "24.06.25.1632",
+	"ver": "25.06.15.1214",
 	"application": "neptune_connector_mssql",
 	"title": "MS SQL Server",
 	"description": "MS SQL Server",

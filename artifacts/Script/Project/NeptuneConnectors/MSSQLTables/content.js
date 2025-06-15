@@ -9,7 +9,8 @@ if (!req.query.schema_id) {
 }
 
 try {
-    const queryTable = `select tab.name,
+    const queryTable = `select tab.name, 
+    type,
     tab.object_id,
     tab.modify_date,
     prop.value as description
@@ -26,6 +27,7 @@ try {
     }
 
     const queryView = `select tab.name,
+    type,
     tab.object_id,
     tab.modify_date,
     prop.value as description
@@ -41,8 +43,26 @@ try {
         return complete();
     }
 
-    const data = resTable.recordset.concat(resView.recordset);
+    const queryProcedure = `
+    select p.name, p.object_id, p.modify_date, prop.value as description, type
+    from sys.procedures as p
+    left join sys.extended_properties as prop
+        on prop.major_id = p.object_id
+        and prop.minor_id = '0'
+        and prop.name = 'MS_Description'
+    where schema_id = '${req.query.schema_id}'
+    `;
 
+    const resProcedure = await globals.Utils.MSSQLExec(req.query.dbid, queryProcedure);
+  
+    if (resProcedure.error) {
+        result.data = resProcedure; 
+        return complete();
+    }
+
+    // Combine results from tables, views, and procedures
+    let data = resTable.recordset.concat(resView.recordset);
+    data = data.concat(resProcedure.recordset);
     result.data = data.sort(globals.Utils.SortBy("name"));
     complete();
 } catch (error) {

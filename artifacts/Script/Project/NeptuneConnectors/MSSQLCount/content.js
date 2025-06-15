@@ -8,13 +8,25 @@ if (!req.query.table) {
     return complete();
 }
 
+//Get connecotr
+const connector = await entities.neptune_af_connector.findOne({
+    select: ["config", "systemid"],
+    where: { id: req.query.id },
+});
+
 try {
-    let query = `select count(*) as count from ${req.query.table}`;
-    let res = await globals.Utils.MSSQLExec(req.query.dbid, query);
-    
-    result.data = {
-        db: res.recordset[0].count
+    let query;
+    if (connector?.config.isProcedure) {
+        query = `EXEC ${connector.config.schema}.${connector.config.table} ${procedureParams}`;
+    } else {
+        query = `select count(*) as count from ${req.query.table}`;
     }
+
+    let res = await globals.Utils.MSSQLExec(req.query.dbid, query);
+
+    result.data = {
+        db: res.recordset[0].count,
+    };
     complete();
 } catch (error) {
     log.error("Error in request: ", error);

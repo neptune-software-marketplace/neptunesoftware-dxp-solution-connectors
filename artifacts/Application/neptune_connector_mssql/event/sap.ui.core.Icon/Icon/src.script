@@ -1,0 +1,9 @@
+if (typeof is_output === "undefined" || is_output === null || is_output === "") {
+    return;
+}
+
+if (is_output === true) {
+    return "sap-icon://nep/output";
+} else {
+    return "sap-icon://nep/input";
+}

@@ -135,7 +135,6 @@ const controller = {
     },
 
     openTables: function () {
-
         if (controller.selectedSystem !== modeloPageDetail.oData.systemid) {
             toolTablesUpdate.firePress();
         }
@@ -283,6 +282,23 @@ const controller = {
                 panQueryOuter.setBusy(false);
                 console.log(res);
             });
+    },
+    filter: function (type) {
+        const binding = tabTables.getBinding("rows");
+        const searchValue = toolTablesFilter.getValue();
+       // const selectedType = "U ";
+        let filter;
+
+        if (searchValue) {
+            filter = new sap.ui.model.Filter({
+                filters: [new sap.ui.model.Filter("type", "EQ", type), new sap.ui.model.Filter("name", "Contains", searchValue)],
+                and: true,
+            });
+        } else {
+            filter = new sap.ui.model.Filter("type", "EQ", type);
+        }
+
+        binding.filter([filter]);
     },
 };
 

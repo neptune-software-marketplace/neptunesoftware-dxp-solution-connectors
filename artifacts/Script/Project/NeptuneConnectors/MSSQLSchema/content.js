@@ -3,8 +3,20 @@ if (!req.query.dbid) {
     return complete();
 }
 
+//Get connecotr
+const connector = await entities.neptune_af_connector.findOne({
+    select: ["config", "systemid"],
+    where: { id: req.query.dbid },
+});
+
 try {
-    const query = `select * from sys.schemas order by name`;
+    let query;
+    if (connector?.config.isProcedure) {
+        query = `EXEC ${connector.config.schema}.${connector.config.table} ${procedureParams}`;
+    } else {
+        query = `select * from sys.schemas order by name`;
+    }
+    
     const res = await globals.Utils.MSSQLExec(req.query.dbid, query);
 
     if (res.error) {

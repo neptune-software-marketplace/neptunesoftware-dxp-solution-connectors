@@ -19,7 +19,7 @@
 	],
 	"apis": [],
 	"name": "MSSQLQuery",
-	"ver": "24.06.28.0549",
+	"ver": "25.06.15.0959",
 	"description": "",
 	"folder": "MSSQL",
 	"content": "file:///content.js",

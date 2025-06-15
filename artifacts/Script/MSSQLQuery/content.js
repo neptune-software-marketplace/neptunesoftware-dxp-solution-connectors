@@ -72,8 +72,14 @@ try {
         }
     });
 
-    // Count
-    statementCount = `select count(*) as __COUNTER from "${connector.config.schema}"."${connector.config.table}" as ${connector.config.table} ${joins} ${where}`;
+    if (connector.config.isProcedure) {
+        const procInput = req.body.filter || {};
+        procedureParams = buildProcedureParams(procInput);
+        statementCount = `EXEC ${connector.config.schema}.${connector.config.table} ${procedureParams}`;
+    } else {
+        // Count
+        statementCount = `select count(*) as __COUNTER from "${connector.config.schema}"."${connector.config.table}" as ${connector.config.table} ${joins} ${where}`;
+    }
 
     const resCount = await globals.Utils.MSSQLExec(connector.systemid, statementCount);
 
@@ -90,24 +96,31 @@ try {
     // All if no fields are specified
     if (!fields) fields = "*";
 
-    // SQL Statement
-    statementExec = `select ${fields} from "${connector.config.schema}"."${connector.config.table}" as ${connector.config.table} ${joins} ${where}`;
-
-    // Sorting
-    let orderField = req.body.sortField;
-
-    if (orderField.indexOf(".") === -1) {
-        statementExec += ` order by [${orderField}] ${req.body.sortOrder}`;
+    if (connector.config.isProcedure) {
+        const procInput = req.body.filter || {};
+        procedureParams = buildProcedureParams(procInput);
+        statementExec = `EXEC ${connector.config.schema}.${connector.config.table} ${procedureParams}`;
     } else {
-        orderField = formatJoinField(orderField);
-        statementExec += ` order by [${orderField}] ${req.body.sortOrder}`;
+        // SQL Statement
+        statementExec = `select ${fields} from "${connector.config.schema}"."${connector.config.table}" as ${connector.config.table} ${joins} ${where}`;
     }
 
-    // Pagination;
-    if (req.body._pagination) {
-        statementExec += ` offset ${req.body._pagination.skip} rows fetch next ${req.body._pagination.take} rows only`;
-    }
+    if (!connector.config.isProcedure) {
+        // Sorting
+        let orderField = req.body.sortField;
 
+        if (orderField.indexOf(".") === -1) {
+            statementExec += ` order by [${orderField}] ${req.body.sortOrder}`;
+        } else {
+            orderField = formatJoinField(orderField);
+            statementExec += ` order by [${orderField}] ${req.body.sortOrder}`;
+        }
+
+        // Pagination;
+        if (req.body._pagination) {
+            statementExec += ` offset ${req.body._pagination.skip} rows fetch next ${req.body._pagination.take} rows only`;
+        }
+    }
     // Query Table
     const resData = await globals.Utils.MSSQLExec(connector.systemid, statementExec);
 
@@ -139,6 +152,19 @@ try {
         },
     };
     complete();
+}
+
+function buildProcedureParams(body) {
+    return Object.entries(body)
+        .filter(([key, val]) => val !== undefined && val !== null && val !== "")
+        .map(([key, val]) => {
+            // Remove leading '@' if present
+            const paramName = key.startsWith("@") ? key.slice(1) : key;
+            // Escape single quotes to avoid SQL injection issues
+            const escapedVal = String(val).replace(/'/g, "''");
+            return `@${paramName} = '${escapedVal}'`;
+        })
+        .join(", ");
 }
 
 function formatJoinField(fieldName, inFieldList) {
