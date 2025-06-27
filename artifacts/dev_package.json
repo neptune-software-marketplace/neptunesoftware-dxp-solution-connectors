@@ -7,8 +7,8 @@
 		"branch": "DXP24"
 	},
 	"name": "neptunesoftware-extended-connectors",
-	"description": "Adaptive Framework Connector",
-	"ver": "25.06.12.2203",
+	"description": "Extended Connector",
+	"ver": "25.06.27.0939",
 	"enableCICD": true,
 	"internalReadOnly": false,
 	"oeVersion": null,
